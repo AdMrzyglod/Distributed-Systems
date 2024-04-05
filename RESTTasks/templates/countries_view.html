@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+    </style>
+</head>
+<body>
+    <h1>Porównanie PKB krajów w latach {{from_year}} - {{to_year}} według waluty: {{currency_dict["to_currency_name"]}}</h1>
+    <br>
+    <h3>PKB w miliardach</h3>
+    <br>
+    <h3>Zamiana podstawowej waluty {{currency_dict["from_currency_name"]}} na {{currency_dict["to_currency_name"]}}</h3>
+    <br>
+    <h3>W czasie od {{currency_dict["from_date"]}} do {{currency_dict["to_date"]}}:</h3>
+    <h4>Największa wartość była dnia {{currency_dict["max_date"]}} i wynosiła:  1 {{currency_dict["from_currency"]}}  =  {{currency_dict["max_value"]}} {{currency_dict["to_currency"]}}</h4>
+    <h4>Lista państw:</h4>
+    <ul>
+        {% for country in countries_list %}
+            <li>Kraj: {{country["country_name"]}}, najmniejsze PKB {{country["min_year"]}}: {{country["max_value"][0]}}, średnie PKB: {{country["max_value"][1]}}, największe PKB {{country["max_year"]}}: {{country["max_value"][2]}},</li>
+        {% endfor %}
+    </ul>
+
+    <h4>Średnio:  1 {{currency_dict["from_currency"]}}  =  {{currency_dict["mean_value"]}} {{currency_dict["to_currency"]}}</h4>
+    <h4>Lista państw:</h4>
+    <ul>
+        {% for country in countries_list %}
+            <li>Kraj: {{country["country_name"]}}, najmniejsze PKB {{country["min_year"]}}: {{country["mean_value"][0]}}, średnie PKB: {{country["mean_value"][1]}}, największe PKB {{country["max_year"]}}: {{country["mean_value"][2]}},</li>
+        {% endfor %}
+    </ul>
+
+    <h4>Najmniejsza wartość była dnia {{currency_dict["min_date"]}} i wynosiła:  1 {{currency_dict["from_currency"]}}  =  {{currency_dict["min_value"]}} {{currency_dict["to_currency"]}}</h4>
+    <h4>Lista państw:</h4>
+    <ul>
+        {% for country in countries_list %}
+            <li>Kraj: {{country["country_name"]}}, najmniejsze PKB {{country["min_year"]}}: {{country["min_value"][0]}}, średnie PKB: {{country["min_value"][1]}}, największe PKB {{country["max_year"]}}: {{country["min_value"][2]}},</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

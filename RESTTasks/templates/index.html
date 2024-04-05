@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dane statyczne walut w zakresie czasu:</h1>
+    <form action="/currencies_results">
+        <label for="api_key_cr">Kod api:</label>
+      <input type="text" id="api_key_cr" name="api_key_cr">
+
+      <label for="from_currency">Z waluty (kod):</label>
+      <input type="text" id="from_currency" name="from_currency"><br><br>
+
+      <label for="to_currency">Do waluty (kod):</label>
+      <input type="text" id="to_currency" name="to_currency"><br><br>
+
+      <label for="from_date">Data Od:</label>
+      <input type="date" id="from_date" name="from_date"><br><br>
+
+      <label for="to_date">Data Do:</label>
+      <input type="date" id="to_date" name="to_date"><br><br>
+
+      <input type="submit" value="Wyślij">
+    </form>
+    <h3>Kody walut:</h3>
+    <ul>
+        {% for key, value in currencies_data.items() %}
+            <li><strong>{{ key }}:</strong> {{ value }}</li>
+        {% endfor %}
+    </ul>
+    <br>
+    <br>
+    <h1>Dane o PKB państw w wybranej dostępnej walucie:</h1>
+    <form action="/countries_results">
+        <label for="api_key_ct">Kod api:</label>
+      <input type="text" id="api_key_ct" name="api_key_ct">
+
+      <label for="currency_code">Waluta:</label>
+      <input type="text" id="currency_code" name="currency_code"><br><br>
+
+      <label for="from_currency_date">Data Od:</label>
+      <input type="date" id="from_currency_date" name="from_currency_date"><br><br>
+
+      <label for="to_currency_date">Data Do:</label>
+      <input type="date" id="to_currency_date" name="to_currency_date"><br><br>
+
+      <label for="countries_list">Lista kodów państw po przecinku:</label>
+      <input type="text" id="countries_list" name="countries_list">
+
+      <label for="from_year">Od roku:</label>
+      <input type="text" id="from_year" name="from_year">
+
+      <label for="to_year">Do roku:</label>
+      <input type="text" id="to_year" name="to_year">
+
+      <input type="submit" value="Wyślij">
+    </form>
+    <br>
+    <br>
+    <h3>Kody państw:</h3>
+    <ul>
+        {% for key, value in countries_data.items() %}
+            <li><strong>{{ key }}:</strong> {{ value }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

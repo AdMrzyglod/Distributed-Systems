@@ -1,0 +1,2475 @@
+----------------------------------------------------------------------------------------------------------------------
+
+TEST SERVER
+
+----------------------------------------------------------------------------------------------------------------------
+http://127.0.0.1:8000/token_index 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+    </style>
+</head>
+<body>
+    <h1>Wygeneruj token: </h1>
+    <form action="/token_create">
+      <input type="submit" value="Wygeneruj token">
+    </form>
+</body>
+</html>
+
+----------------------------------------------------------------------------------------------------------------------
+
+http://127.0.0.1:8000/token_create
+
+{
+  "token": {
+    "access_token": "rbVcDgMYz4towxbecEXXniytJmKMvan67jACdKH5XDTTMAPz31KIrUZKPYKIjPFq",
+    "start_date": "2024-03-15 21:36:19.531781",
+    "end_date": "2024-03-16 03:36:19.531781"
+  }
+}
+
+
+----------------------------------------------------------------------------------------------------------------------
+
+http://127.0.0.1:8000/currencies_names
+
+{
+  "AUD": "Australian Dollar",
+  "BGN": "Bulgarian Lev",
+  "BRL": "Brazilian Real",
+  "CAD": "Canadian Dollar",
+  "CHF": "Swiss Franc",
+  "CNY": "Chinese Renminbi Yuan",
+  "CZK": "Czech Koruna",
+  "DKK": "Danish Krone",
+  "EUR": "Euro",
+  "GBP": "British Pound",
+  "HKD": "Hong Kong Dollar",
+  "HUF": "Hungarian Forint",
+  "IDR": "Indonesian Rupiah",
+  "ILS": "Israeli New Sheqel",
+  "INR": "Indian Rupee",
+  "ISK": "Icelandic Króna",
+  "JPY": "Japanese Yen",
+  "KRW": "South Korean Won",
+  "MXN": "Mexican Peso",
+  "MYR": "Malaysian Ringgit",
+  "NOK": "Norwegian Krone",
+  "NZD": "New Zealand Dollar",
+  "PHP": "Philippine Peso",
+  "PLN": "Polish Złoty",
+  "RON": "Romanian Leu",
+  "SEK": "Swedish Krona",
+  "SGD": "Singapore Dollar",
+  "THB": "Thai Baht",
+  "TRY": "Turkish Lira",
+  "USD": "United States Dollar",
+  "ZAR": "South African Rand"
+}
+
+----------------------------------------------------------------------------------------------------------------------
+
+http://127.0.0.1:8000/currencies_results_json?api_key_cr=l7V7BuLxlCG8cZaLIemWaSs47tkOE8J5vyasoTY1lsPGKDHn5uhSq3VN8Ry5qCWT&from_currency=GBP&to_currency=CHF&from_date=2005-10-11&to_date=2022-02-04
+
+{
+  "from_currency_name": "British Pound",
+  "to_currency_name": "Swiss Franc",
+  "from_currency": "GBP",
+  "to_currency": "CHF",
+  "from_date": "2005-10-11",
+  "to_date": "2022-02-04",
+  "mean_value": 1.5699,
+  "min_date": "2020-03-16",
+  "min_value": 1.1516,
+  "max_date": "2007-07-23",
+  "max_value": 2.4766
+}
+
+----------------------------------------------------------------------------------------------------------------------
+
+http://127.0.0.1:8000/currencies_results?api_key_cr=l7V7BuLxlCG8cZaLIemWaSs47tkOE8J5vyasoTY1lsPGKDHn5uhSq3VN8Ry5qCWT&from_currency=GBP&to_currency=CHF&from_date=2005-10-11&to_date=2022-02-04
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kursy walut</h1>
+    <br>
+    <h3>Zamiana waluty British Pound na Swiss Franc</h3>
+    <br>
+    <p>W czasie od 2005-10-11 do 2022-02-04:</p>
+    <p>Średnio:  1 GBP  =  1.5699 CHF</p>
+    <p>Największa wartość była dnia 2007-07-23 i wynosiła:  1 GBP  =  2.4766 CHF</p>
+    <p>Najmniejsza wartość była dnia 2020-03-16 i wynosiła:  1 GBP  =  1.1516 CHF</p>
+</body>
+</html>
+
+----------------------------------------------------------------------------------------------------------------------
+
+http://127.0.0.1:8000/currencies_results_json?api_key_cr=l7V7BuLxlCG8cZaLIemWaSs47tkOE8J5vyasoTY1lsPGKDHn5uhSq3VN8Ry5qCWT&from_currency=PLN&to_currency=NOK&from_date=2011-05-22&to_date=2018-09-30
+
+{
+  "from_currency_name": "Polish Złoty",
+  "to_currency_name": "Norwegian Krone",
+  "from_currency": "PLN",
+  "to_currency": "NOK",
+  "from_date": "2011-05-22",
+  "to_date": "2018-09-30",
+  "mean_value": 2.0275,
+  "min_date": "2011-12-12",
+  "min_value": 1.7072,
+  "max_date": "2017-12-25",
+  "max_value": 2.3567
+}
+
+----------------------------------------------------------------------------------------------------------------------
+
+http://127.0.0.1:8000/currencies_results?api_key_cr=l7V7BuLxlCG8cZaLIemWaSs47tkOE8J5vyasoTY1lsPGKDHn5uhSq3VN8Ry5qCWT&from_currency=PLN&to_currency=NOK&from_date=2011-05-22&to_date=2018-09-30
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kursy walut</h1>
+    <br>
+    <h3>Zamiana waluty Polish Złoty na Norwegian Krone</h3>
+    <br>
+    <p>W czasie od 2011-05-22 do 2018-09-30:</p>
+    <p>Średnio:  1 PLN  =  2.0275 NOK</p>
+    <p>Największa wartość była dnia 2017-12-25 i wynosiła:  1 PLN  =  2.3567 NOK</p>
+    <p>Najmniejsza wartość była dnia 2011-12-12 i wynosiła:  1 PLN  =  1.7072 NOK</p>
+</body>
+</html>
+
+----------------------------------------------------------------------------------------------------------------------
+
+http://127.0.0.1:8000/countries_names
+
+{
+  "ABW": "Aruba",
+  "AFE": "Africa Eastern and Southern",
+  "AFG": "Afghanistan",
+  "AFR": "Africa",
+  "AFW": "Africa Western and Central",
+  "AGO": "Angola",
+  "ALB": "Albania",
+  "AND": "Andorra",
+  "ARB": "Arab World",
+  "ARE": "United Arab Emirates",
+  "ARG": "Argentina",
+  "ARM": "Armenia",
+  "ASM": "American Samoa",
+  "ATG": "Antigua and Barbuda",
+  "AUS": "Australia",
+  "AUT": "Austria",
+  "AZE": "Azerbaijan",
+  "BDI": "Burundi",
+  "BEA": "East Asia & Pacific (IBRD-only countries)",
+  "BEC": "Europe & Central Asia (IBRD-only countries)",
+  "BEL": "Belgium",
+  "BEN": "Benin",
+  "BFA": "Burkina Faso",
+  "BGD": "Bangladesh",
+  "BGR": "Bulgaria",
+  "BHI": "IBRD countries classified as high income",
+  "BHR": "Bahrain",
+  "BHS": "Bahamas, The",
+  "BIH": "Bosnia and Herzegovina",
+  "BLA": "Latin America & the Caribbean (IBRD-only countries)",
+  "BLR": "Belarus",
+  "BLZ": "Belize",
+  "BMN": "Middle East & North Africa (IBRD-only countries)",
+  "BMU": "Bermuda",
+  "BOL": "Bolivia",
+  "BRA": "Brazil",
+  "BRB": "Barbados",
+  "BRN": "Brunei Darussalam",
+  "BSS": "Sub-Saharan Africa (IBRD-only countries)",
+  "BTN": "Bhutan",
+  "BWA": "Botswana",
+  "CAA": "Sub-Saharan Africa (IFC classification)",
+  "CAF": "Central African Republic",
+  "CAN": "Canada",
+  "CEA": "East Asia and the Pacific (IFC classification)",
+  "CEB": "Central Europe and the Baltics",
+  "CEU": "Europe and Central Asia (IFC classification)",
+  "CHE": "Switzerland",
+  "CHI": "Channel Islands",
+  "CHL": "Chile",
+  "CHN": "China",
+  "CIV": "Cote d'Ivoire",
+  "CLA": "Latin America and the Caribbean (IFC classification)",
+  "CME": "Middle East and North Africa (IFC classification)",
+  "CMR": "Cameroon",
+  "COD": "Congo, Dem. Rep.",
+  "COG": "Congo, Rep.",
+  "COL": "Colombia",
+  "COM": "Comoros",
+  "CPV": "Cabo Verde",
+  "CRI": "Costa Rica",
+  "CSA": "South Asia (IFC classification)",
+  "CSS": "Caribbean small states",
+  "CUB": "Cuba",
+  "CUW": "Curacao",
+  "CYM": "Cayman Islands",
+  "CYP": "Cyprus",
+  "CZE": "Czechia",
+  "DEA": "East Asia & Pacific (IDA-eligible countries)",
+  "DEC": "Europe & Central Asia (IDA-eligible countries)",
+  "DEU": "Germany",
+  "DJI": "Djibouti",
+  "DLA": "Latin America & the Caribbean (IDA-eligible countries)",
+  "DMA": "Dominica",
+  "DMN": "Middle East & North Africa (IDA-eligible countries)",
+  "DNK": "Denmark",
+  "DNS": "IDA countries in Sub-Saharan Africa not classified as fragile situations ",
+  "DOM": "Dominican Republic",
+  "DSA": "South Asia (IDA-eligible countries)",
+  "DSF": "IDA countries in Sub-Saharan Africa classified as fragile situations ",
+  "DSS": "Sub-Saharan Africa (IDA-eligible countries)",
+  "DZA": "Algeria",
+  "EAP": "East Asia & Pacific (excluding high income)",
+  "EAR": "Early-demographic dividend",
+  "EAS": "East Asia & Pacific",
+  "ECA": "Europe & Central Asia (excluding high income)",
+  "ECS": "Europe & Central Asia",
+  "ECU": "Ecuador",
+  "EGY": "Egypt, Arab Rep.",
+  "EMU": "Euro area",
+  "ERI": "Eritrea",
+  "ESP": "Spain",
+  "EST": "Estonia",
+  "ETH": "Ethiopia",
+  "EUU": "European Union",
+  "FCS": "Fragile and conflict affected situations",
+  "FIN": "Finland",
+  "FJI": "Fiji",
+  "FRA": "France",
+  "FRO": "Faroe Islands",
+  "FSM": "Micronesia, Fed. Sts.",
+  "FXS": "IDA countries classified as fragile situations, excluding Sub-Saharan Africa",
+  "GAB": "Gabon",
+  "GBR": "United Kingdom",
+  "GEO": "Georgia",
+  "GHA": "Ghana",
+  "GIB": "Gibraltar",
+  "GIN": "Guinea",
+  "GMB": "Gambia, The",
+  "GNB": "Guinea-Bissau",
+  "GNQ": "Equatorial Guinea",
+  "GRC": "Greece",
+  "GRD": "Grenada",
+  "GRL": "Greenland",
+  "GTM": "Guatemala",
+  "GUM": "Guam",
+  "GUY": "Guyana",
+  "HIC": "High income",
+  "HKG": "Hong Kong SAR, China",
+  "HND": "Honduras",
+  "HPC": "Heavily indebted poor countries (HIPC)",
+  "HRV": "Croatia",
+  "HTI": "Haiti",
+  "HUN": "Hungary",
+  "IBB": "IBRD, including blend",
+  "IBD": "IBRD only",
+  "IBT": "IDA & IBRD total",
+  "IDA": "IDA total",
+  "IDB": "IDA blend",
+  "IDN": "Indonesia",
+  "IDX": "IDA only",
+  "IMN": "Isle of Man",
+  "IND": "India",
+  "INX": "Not classified",
+  "IRL": "Ireland",
+  "IRN": "Iran, Islamic Rep.",
+  "IRQ": "Iraq",
+  "ISL": "Iceland",
+  "ISR": "Israel",
+  "ITA": "Italy",
+  "JAM": "Jamaica",
+  "JOR": "Jordan",
+  "JPN": "Japan",
+  "KAZ": "Kazakhstan",
+  "KEN": "Kenya",
+  "KGZ": "Kyrgyz Republic",
+  "KHM": "Cambodia",
+  "KIR": "Kiribati",
+  "KNA": "St. Kitts and Nevis",
+  "KOR": "Korea, Rep.",
+  "KWT": "Kuwait",
+  "LAC": "Latin America & Caribbean (excluding high income)",
+  "LAO": "Lao PDR",
+  "LBN": "Lebanon",
+  "LBR": "Liberia",
+  "LBY": "Libya",
+  "LCA": "St. Lucia",
+  "LCN": "Latin America & Caribbean ",
+  "LDC": "Least developed countries: UN classification",
+  "LIC": "Low income",
+  "LIE": "Liechtenstein",
+  "LKA": "Sri Lanka",
+  "LMC": "Lower middle income",
+  "LMY": "Low & middle income",
+  "LSO": "Lesotho",
+  "LTE": "Late-demographic dividend",
+  "LTU": "Lithuania",
+  "LUX": "Luxembourg",
+  "LVA": "Latvia",
+  "MAC": "Macao SAR, China",
+  "MAF": "St. Martin (French part)",
+  "MAR": "Morocco",
+  "MCO": "Monaco",
+  "MDA": "Moldova",
+  "MDE": "Middle East (developing only)",
+  "MDG": "Madagascar",
+  "MDV": "Maldives",
+  "MEA": "Middle East & North Africa",
+  "MEX": "Mexico",
+  "MHL": "Marshall Islands",
+  "MIC": "Middle income",
+  "MKD": "North Macedonia",
+  "MLI": "Mali",
+  "MLT": "Malta",
+  "MMR": "Myanmar",
+  "MNA": "Middle East & North Africa (excluding high income)",
+  "MNE": "Montenegro",
+  "MNG": "Mongolia",
+  "MNP": "Northern Mariana Islands",
+  "MOZ": "Mozambique",
+  "MRT": "Mauritania",
+  "MUS": "Mauritius",
+  "MWI": "Malawi",
+  "MYS": "Malaysia",
+  "NAC": "North America",
+  "NAF": "North Africa",
+  "NAM": "Namibia",
+  "NCL": "New Caledonia",
+  "NER": "Niger",
+  "NGA": "Nigeria",
+  "NIC": "Nicaragua",
+  "NLD": "Netherlands",
+  "NOR": "Norway",
+  "NPL": "Nepal",
+  "NRS": "Non-resource rich Sub-Saharan Africa countries",
+  "NRU": "Nauru",
+  "NXS": "IDA countries not classified as fragile situations, excluding Sub-Saharan Africa",
+  "NZL": "New Zealand",
+  "OED": "OECD members",
+  "OMN": "Oman",
+  "OSS": "Other small states",
+  "PAK": "Pakistan",
+  "PAN": "Panama",
+  "PER": "Peru",
+  "PHL": "Philippines",
+  "PLW": "Palau",
+  "PNG": "Papua New Guinea",
+  "POL": "Poland",
+  "PRE": "Pre-demographic dividend",
+  "PRI": "Puerto Rico",
+  "PRK": "Korea, Dem. People's Rep.",
+  "PRT": "Portugal",
+  "PRY": "Paraguay",
+  "PSE": "West Bank and Gaza",
+  "PSS": "Pacific island small states",
+  "PST": "Post-demographic dividend",
+  "PYF": "French Polynesia",
+  "QAT": "Qatar",
+  "ROU": "Romania",
+  "RRS": "Resource rich Sub-Saharan Africa countries",
+  "RUS": "Russian Federation",
+  "RWA": "Rwanda",
+  "SAS": "South Asia",
+  "SAU": "Saudi Arabia",
+  "SDN": "Sudan",
+  "SEN": "Senegal",
+  "SGP": "Singapore",
+  "SLB": "Solomon Islands",
+  "SLE": "Sierra Leone",
+  "SLV": "El Salvador",
+  "SMR": "San Marino",
+  "SOM": "Somalia",
+  "SRB": "Serbia",
+  "SSA": "Sub-Saharan Africa (excluding high income)",
+  "SSD": "South Sudan",
+  "SSF": "Sub-Saharan Africa ",
+  "SST": "Small states",
+  "STP": "Sao Tome and Principe",
+  "SUR": "Suriname",
+  "SVK": "Slovak Republic",
+  "SVN": "Slovenia",
+  "SWE": "Sweden",
+  "SWZ": "Eswatini",
+  "SXM": "Sint Maarten (Dutch part)",
+  "SXZ": "Sub-Saharan Africa excluding South Africa",
+  "SYC": "Seychelles",
+  "SYR": "Syrian Arab Republic",
+  "TCA": "Turks and Caicos Islands",
+  "TCD": "Chad",
+  "TEA": "East Asia & Pacific (IDA & IBRD countries)",
+  "TEC": "Europe & Central Asia (IDA & IBRD countries)",
+  "TGO": "Togo",
+  "THA": "Thailand",
+  "TJK": "Tajikistan",
+  "TKM": "Turkmenistan",
+  "TLA": "Latin America & the Caribbean (IDA & IBRD countries)",
+  "TLS": "Timor-Leste",
+  "TMN": "Middle East & North Africa (IDA & IBRD countries)",
+  "TON": "Tonga",
+  "TSA": "South Asia (IDA & IBRD)",
+  "TSS": "Sub-Saharan Africa (IDA & IBRD countries)",
+  "TTO": "Trinidad and Tobago",
+  "TUN": "Tunisia",
+  "TUR": "Turkiye",
+  "TUV": "Tuvalu",
+  "TZA": "Tanzania",
+  "UGA": "Uganda",
+  "UKR": "Ukraine",
+  "UMC": "Upper middle income",
+  "URY": "Uruguay",
+  "USA": "United States",
+  "UZB": "Uzbekistan",
+  "VCT": "St. Vincent and the Grenadines",
+  "VEN": "Venezuela, RB",
+  "VGB": "British Virgin Islands",
+  "VIR": "Virgin Islands (U.S.)",
+  "VNM": "Viet Nam",
+  "VUT": "Vanuatu",
+  "WLD": "World",
+  "WSM": "Samoa",
+  "XKX": "Kosovo",
+  "XZN": "Sub-Saharan Africa excluding South Africa and Nigeria",
+  "YEM": "Yemen, Rep.",
+  "ZAF": "South Africa",
+  "ZMB": "Zambia",
+  "ZWE": "Zimbabwe"
+}
+
+
+----------------------------------------------------------------------------------------------------------------------
+
+http://127.0.0.1:8000/countries_results_json?api_key_ct=l7V7BuLxlCG8cZaLIemWaSs47tkOE8J5vyasoTY1lsPGKDHn5uhSq3VN8Ry5qCWT&currency_code=CHF&from_currency_date=2012-03-28&to_currency_date=2019-07-07&countries_list=POL%2CUSA%2CALB%2CDEU%2CTUR&from_year=1990&to_year=2019
+
+
+{
+  "from_year": "1990",
+  "to_year": "2019",
+  "currency_dict": {
+    "from_currency_name": "United States Dollar",
+    "to_currency_name": "Swiss Franc",
+    "from_currency": "USD",
+    "to_currency": "CHF",
+    "from_date": "2012-03-28",
+    "to_date": "2019-07-07",
+    "mean_value": 0.9602,
+    "min_date": "2015-01-19",
+    "min_value": 0.86749,
+    "max_date": "2016-12-19",
+    "max_value": 1.027
+  },
+  "countries_list": [
+    {
+      "country_name": "United States",
+      "mean_PKB": 12712447084366.666,
+      "min_year": "1990",
+      "min_PKB": 5963144000000,
+      "max_year": "2019",
+      "max_PKB": 21380976119000,
+      "min_value": [
+        5172.97,
+        11027.92,
+        18547.78
+      ],
+      "mean_value": [
+        5725.81,
+        12206.49,
+        20530.01
+      ],
+      "max_value": [
+        6124.15,
+        13055.68,
+        21958.26
+      ]
+    },
+    {
+      "country_name": "Germany",
+      "mean_PKB": 2872346827865.623,
+      "min_year": "1990",
+      "min_PKB": 1771671206875.68,
+      "max_year": "2018",
+      "max_PKB": 3974443355019.6,
+      "min_value": [
+        1536.91,
+        2491.73,
+        3447.79
+      ],
+      "mean_value": [
+        1701.16,
+        2758.03,
+        3816.26
+      ],
+      "max_value": [
+        1819.51,
+        2949.9,
+        4081.75
+      ]
+    },
+    {
+      "country_name": "Turkiye",
+      "mean_PKB": 499169176732.2938,
+      "min_year": "1994",
+      "min_PKB": 130650447499.071,
+      "max_year": "2013",
+      "max_PKB": 957799120008.32,
+      "min_value": [
+        113.34,
+        433.02,
+        830.88
+      ],
+      "mean_value": [
+        125.45,
+        479.3,
+        919.68
+      ],
+      "max_value": [
+        134.18,
+        512.65,
+        983.66
+      ]
+    },
+    {
+      "country_name": "Poland",
+      "mean_PKB": 318474678475.8836,
+      "min_year": "1990",
+      "min_PKB": 65977748210.5263,
+      "max_year": "2019",
+      "max_PKB": 596058473058.766,
+      "min_value": [
+        57.24,
+        276.27,
+        517.07
+      ],
+      "mean_value": [
+        63.35,
+        305.8,
+        572.34
+      ],
+      "max_value": [
+        67.76,
+        327.07,
+        612.15
+      ]
+    },
+    {
+      "country_name": "Albania",
+      "mean_PKB": 7584040808.5048,
+      "min_year": "1992",
+      "min_PKB": 652174990.837304,
+      "max_year": "2019",
+      "max_PKB": 15401826127.2539,
+      "min_value": [
+        0.57,
+        6.58,
+        13.36
+      ],
+      "mean_value": [
+        0.63,
+        7.28,
+        14.79
+      ],
+      "max_value": [
+        0.67,
+        7.79,
+        15.82
+      ]
+    }
+  ]
+}
+
+----------------------------------------------------------------------------------------------------------------------
+
+
+http://127.0.0.1:8000/countries_results?api_key_ct=l7V7BuLxlCG8cZaLIemWaSs47tkOE8J5vyasoTY1lsPGKDHn5uhSq3VN8Ry5qCWT&currency_code=CHF&from_currency_date=2012-03-28&to_currency_date=2019-07-07&countries_list=POL%2CUSA%2CALB%2CDEU%2CTUR&from_year=1990&to_year=2019
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+    </style>
+</head>
+<body>
+    <h1>Porównanie PKB krajów w latach 1990 - 2019 według waluty: Swiss Franc</h1>
+    <br>
+    <h3>PKB w miliardach</h3>
+    <br>
+    <h3>Zamiana podstawowej waluty United States Dollar na Swiss Franc</h3>
+    <br>
+    <h3>W czasie od 2012-03-28 do 2019-07-07:</h3>
+    <h4>Największa wartość była dnia 2016-12-19 i wynosiła:  1 USD  =  1.027 CHF</h4>
+    <h4>Lista państw:</h4>
+    <ul>
+        
+            <li>Kraj: United States, najmniejsze PKB 1990: 6124.15, średnie PKB: 13055.68, największe PKB 2019: 21958.26,</li>
+        
+            <li>Kraj: Germany, najmniejsze PKB 1990: 1819.51, średnie PKB: 2949.9, największe PKB 2018: 4081.75,</li>
+        
+            <li>Kraj: Turkiye, najmniejsze PKB 1994: 134.18, średnie PKB: 512.65, największe PKB 2013: 983.66,</li>
+        
+            <li>Kraj: Poland, najmniejsze PKB 1990: 67.76, średnie PKB: 327.07, największe PKB 2019: 612.15,</li>
+        
+            <li>Kraj: Albania, najmniejsze PKB 1992: 0.67, średnie PKB: 7.79, największe PKB 2019: 15.82,</li>
+        
+    </ul>
+
+    <h4>Średnio:  1 USD  =  0.9602 CHF</h4>
+    <h4>Lista państw:</h4>
+    <ul>
+        
+            <li>Kraj: United States, najmniejsze PKB 1990: 5725.81, średnie PKB: 12206.49, największe PKB 2019: 20530.01,</li>
+        
+            <li>Kraj: Germany, najmniejsze PKB 1990: 1701.16, średnie PKB: 2758.03, największe PKB 2018: 3816.26,</li>
+        
+            <li>Kraj: Turkiye, najmniejsze PKB 1994: 125.45, średnie PKB: 479.3, największe PKB 2013: 919.68,</li>
+        
+            <li>Kraj: Poland, najmniejsze PKB 1990: 63.35, średnie PKB: 305.8, największe PKB 2019: 572.34,</li>
+        
+            <li>Kraj: Albania, najmniejsze PKB 1992: 0.63, średnie PKB: 7.28, największe PKB 2019: 14.79,</li>
+        
+    </ul>
+
+    <h4>Najmniejsza wartość była dnia 2015-01-19 i wynosiła:  1 USD  =  0.86749 CHF</h4>
+    <h4>Lista państw:</h4>
+    <ul>
+        
+            <li>Kraj: United States, najmniejsze PKB 1990: 5172.97, średnie PKB: 11027.92, największe PKB 2019: 18547.78,</li>
+        
+            <li>Kraj: Germany, najmniejsze PKB 1990: 1536.91, średnie PKB: 2491.73, największe PKB 2018: 3447.79,</li>
+        
+            <li>Kraj: Turkiye, najmniejsze PKB 1994: 113.34, średnie PKB: 433.02, największe PKB 2013: 830.88,</li>
+        
+            <li>Kraj: Poland, najmniejsze PKB 1990: 57.24, średnie PKB: 276.27, największe PKB 2019: 517.07,</li>
+        
+            <li>Kraj: Albania, najmniejsze PKB 1992: 0.57, średnie PKB: 6.58, największe PKB 2019: 13.36,</li>
+        
+    </ul>
+</body>
+</html>
+
+
+----------------------------------------------------------------------------------------------------------------------
+
+http://127.0.0.1:8000/countries_results_json?api_key_ct=l7V7BuLxlCG8cZaLIemWaSs47tkOE8J5vyasoTY1lsPGKDHn5uhSq3VN8Ry5qCWT&currency_code=JPY&from_currency_date=2001-08-19&to_currency_date=2015-05-08&countries_list=POL%2CSWE%2CTZA%2CSGP%2CPRT%2CNPL%2CKEN&from_year=1971&to_year=2011
+
+
+{
+  "from_year": "1971",
+  "to_year": "2011",
+  "currency_dict": {
+    "from_currency_name": "United States Dollar",
+    "to_currency_name": "Japanese Yen",
+    "from_currency": "USD",
+    "to_currency": "JPY",
+    "from_date": "2001-08-19",
+    "to_date": "2015-05-08",
+    "mean_value": 104.0999,
+    "min_date": "2011-10-24",
+    "min_value": 75.937,
+    "max_date": "2002-02-25",
+    "max_value": 134.01
+  },
+  "countries_list": [
+    {
+      "country_name": "Sweden",
+      "mean_PKB": 235125249955.0382,
+      "min_year": "1971",
+      "min_PKB": 41566412922.6087,
+      "max_year": "2011",
+      "max_PKB": 574094112972.733,
+      "min_value": [
+        3156.43,
+        17854.71,
+        43594.98
+      ],
+      "mean_value": [
+        4327.06,
+        24476.52,
+        59763.14
+      ],
+      "max_value": [
+        5570.31,
+        31509.13,
+        76934.35
+      ]
+    },
+    {
+      "country_name": "Poland",
+      "mean_PKB": 243070546521.254,
+      "min_year": "1989",
+      "min_PKB": 0,
+      "max_year": "2008",
+      "max_PKB": 533599779515.715,
+      "min_value": [
+        0,
+        18458.05,
+        40519.97
+      ],
+      "mean_value": [
+        0,
+        25303.62,
+        55547.68
+      ],
+      "max_value": [
+        0,
+        32573.88,
+        71507.71
+      ]
+    },
+    {
+      "country_name": "Singapore",
+      "mean_PKB": 68857595066.1636,
+      "min_year": "1971",
+      "min_PKB": 2263785443.61688,
+      "max_year": "2011",
+      "max_PKB": 279356499090.458,
+      "min_value": [
+        171.91,
+        5228.84,
+        21213.49
+      ],
+      "mean_value": [
+        235.66,
+        7168.07,
+        29080.98
+      ],
+      "max_value": [
+        303.37,
+        9227.61,
+        37436.56
+      ]
+    },
+    {
+      "country_name": "Portugal",
+      "mean_PKB": 97316519706.6235,
+      "min_year": "1971",
+      "min_PKB": 9201604240.28269,
+      "max_year": "2008",
+      "max_PKB": 263416394624.084,
+      "min_value": [
+        698.74,
+        7389.92,
+        20003.05
+      ],
+      "mean_value": [
+        957.89,
+        10130.64,
+        27421.62
+      ],
+      "max_value": [
+        1233.11,
+        13041.39,
+        35300.43
+      ]
+    },
+    {
+      "country_name": "Kenya",
+      "mean_PKB": 12652326745.3936,
+      "min_year": "1971",
+      "min_PKB": 1778391288.64348,
+      "max_year": "2011",
+      "max_PKB": 46869473150.61,
+      "min_value": [
+        135.05,
+        960.78,
+        3559.13
+      ],
+      "mean_value": [
+        185.13,
+        1317.11,
+        4879.11
+      ],
+      "max_value": [
+        238.32,
+        1695.54,
+        6280.98
+      ]
+    },
+    {
+      "country_name": "Tanzania",
+      "mean_PKB": 13849560085.2176,
+      "min_year": "1987",
+      "min_PKB": 0,
+      "max_year": "2011",
+      "max_PKB": 34657140096.4836,
+      "min_value": [
+        0,
+        1051.69,
+        2631.76
+      ],
+      "mean_value": [
+        0,
+        1441.74,
+        3607.8
+      ],
+      "max_value": [
+        0,
+        1855.98,
+        4644.4
+      ]
+    },
+    {
+      "country_name": "Nepal",
+      "mean_PKB": 4953421486.081,
+      "min_year": "1971",
+      "min_PKB": 882765470.722173,
+      "max_year": "2011",
+      "max_PKB": 21573872273.8375,
+      "min_value": [
+        67.03,
+        376.15,
+        1638.26
+      ],
+      "mean_value": [
+        91.9,
+        515.65,
+        2245.84
+      ],
+      "max_value": [
+        118.3,
+        663.81,
+        2891.11
+      ]
+    }
+  ]
+}
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------
+
+http://127.0.0.1:8000/countries_results?api_key_ct=l7V7BuLxlCG8cZaLIemWaSs47tkOE8J5vyasoTY1lsPGKDHn5uhSq3VN8Ry5qCWT&currency_code=JPY&from_currency_date=2001-08-19&to_currency_date=2015-05-08&countries_list=POL%2CSWE%2CTZA%2CSGP%2CPRT%2CNPL%2CKEN&from_year=1971&to_year=2011
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+    </style>
+</head>
+<body>
+    <h1>Porównanie PKB krajów w latach 1971 - 2011 według waluty: Japanese Yen</h1>
+    <br>
+    <h3>PKB w miliardach</h3>
+    <br>
+    <h3>Zamiana podstawowej waluty United States Dollar na Japanese Yen</h3>
+    <br>
+    <h3>W czasie od 2001-08-19 do 2015-05-08:</h3>
+    <h4>Największa wartość była dnia 2002-02-25 i wynosiła:  1 USD  =  134.01 JPY</h4>
+    <h4>Lista państw:</h4>
+    <ul>
+        
+            <li>Kraj: Sweden, najmniejsze PKB 1971: 5570.31, średnie PKB: 31509.13, największe PKB 2011: 76934.35,</li>
+        
+            <li>Kraj: Poland, najmniejsze PKB 1989: 0.0, średnie PKB: 32573.88, największe PKB 2008: 71507.71,</li>
+        
+            <li>Kraj: Singapore, najmniejsze PKB 1971: 303.37, średnie PKB: 9227.61, największe PKB 2011: 37436.56,</li>
+        
+            <li>Kraj: Portugal, najmniejsze PKB 1971: 1233.11, średnie PKB: 13041.39, największe PKB 2008: 35300.43,</li>
+        
+            <li>Kraj: Kenya, najmniejsze PKB 1971: 238.32, średnie PKB: 1695.54, największe PKB 2011: 6280.98,</li>
+        
+            <li>Kraj: Tanzania, najmniejsze PKB 1987: 0.0, średnie PKB: 1855.98, największe PKB 2011: 4644.4,</li>
+        
+            <li>Kraj: Nepal, najmniejsze PKB 1971: 118.3, średnie PKB: 663.81, największe PKB 2011: 2891.11,</li>
+        
+    </ul>
+
+    <h4>Średnio:  1 USD  =  104.0999 JPY</h4>
+    <h4>Lista państw:</h4>
+    <ul>
+        
+            <li>Kraj: Sweden, najmniejsze PKB 1971: 4327.06, średnie PKB: 24476.52, największe PKB 2011: 59763.14,</li>
+        
+            <li>Kraj: Poland, najmniejsze PKB 1989: 0.0, średnie PKB: 25303.62, największe PKB 2008: 55547.68,</li>
+        
+            <li>Kraj: Singapore, najmniejsze PKB 1971: 235.66, średnie PKB: 7168.07, największe PKB 2011: 29080.98,</li>
+        
+            <li>Kraj: Portugal, najmniejsze PKB 1971: 957.89, średnie PKB: 10130.64, największe PKB 2008: 27421.62,</li>
+        
+            <li>Kraj: Kenya, najmniejsze PKB 1971: 185.13, średnie PKB: 1317.11, największe PKB 2011: 4879.11,</li>
+        
+            <li>Kraj: Tanzania, najmniejsze PKB 1987: 0.0, średnie PKB: 1441.74, największe PKB 2011: 3607.8,</li>
+        
+            <li>Kraj: Nepal, najmniejsze PKB 1971: 91.9, średnie PKB: 515.65, największe PKB 2011: 2245.84,</li>
+        
+    </ul>
+
+    <h4>Najmniejsza wartość była dnia 2011-10-24 i wynosiła:  1 USD  =  75.937 JPY</h4>
+    <h4>Lista państw:</h4>
+    <ul>
+        
+            <li>Kraj: Sweden, najmniejsze PKB 1971: 3156.43, średnie PKB: 17854.71, największe PKB 2011: 43594.98,</li>
+        
+            <li>Kraj: Poland, najmniejsze PKB 1989: 0.0, średnie PKB: 18458.05, największe PKB 2008: 40519.97,</li>
+        
+            <li>Kraj: Singapore, najmniejsze PKB 1971: 171.91, średnie PKB: 5228.84, największe PKB 2011: 21213.49,</li>
+        
+            <li>Kraj: Portugal, najmniejsze PKB 1971: 698.74, średnie PKB: 7389.92, największe PKB 2008: 20003.05,</li>
+        
+            <li>Kraj: Kenya, najmniejsze PKB 1971: 135.05, średnie PKB: 960.78, największe PKB 2011: 3559.13,</li>
+        
+            <li>Kraj: Tanzania, najmniejsze PKB 1987: 0.0, średnie PKB: 1051.69, największe PKB 2011: 2631.76,</li>
+        
+            <li>Kraj: Nepal, najmniejsze PKB 1971: 67.03, średnie PKB: 376.15, największe PKB 2011: 1638.26,</li>
+        
+    </ul>
+</body>
+</html>
+
+
+----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------
+
+TEST EXTERNAL SERVICE
+
+----------------------------------------------------------------------------------------------------------------------
+
+https://api.frankfurter.app/2024-02-26..2024-03-04?from=CZK
+
+
+{
+    "amount": 1.0,
+    "base": "CZK",
+    "start_date": "2024-02-26",
+    "end_date": "2024-03-04",
+    "rates": {
+        "2024-02-26": {
+            "AUD": 0.06528,
+            "BGN": 0.0771,
+            "BRL": 0.21331,
+            "CAD": 0.05785,
+            "CHF": 0.03763,
+            "CNY": 0.30788,
+            "DKK": 0.29385,
+            "EUR": 0.03942,
+            "GBP": 0.0337,
+            "HKD": 0.33468,
+            "HUF": 15.3558,
+            "IDR": 668.7,
+            "ILS": 0.15612,
+            "INR": 3.5456,
+            "ISK": 5.8856,
+            "JPY": 6.4407,
+            "KRW": 56.942,
+            "MXN": 0.73116,
+            "MYR": 0.20436,
+            "NOK": 0.45053,
+            "NZD": 0.06922,
+            "PHP": 2.3997,
+            "PLN": 0.16972,
+            "RON": 0.19601,
+            "SEK": 0.44024,
+            "SGD": 0.05748,
+            "THB": 1.5341,
+            "TRY": 1.3314,
+            "USD": 0.04278,
+            "ZAR": 0.82588
+        },
+        "2024-02-27": {
+            "AUD": 0.06539,
+            "BGN": 0.07721,
+            "BRL": 0.21295,
+            "CAD": 0.05783,
+            "CHF": 0.03768,
+            "CNY": 0.30846,
+            "DKK": 0.2943,
+            "EUR": 0.03948,
+            "GBP": 0.0338,
+            "HKD": 0.33533,
+            "HUF": 15.4034,
+            "IDR": 670.14,
+            "ILS": 0.15531,
+            "INR": 3.552,
+            "ISK": 5.8937,
+            "JPY": 6.4361,
+            "KRW": 57.055,
+            "MXN": 0.73117,
+            "MYR": 0.20407,
+            "NOK": 0.45125,
+            "NZD": 0.06948,
+            "PHP": 2.4042,
+            "PLN": 0.17035,
+            "RON": 0.19607,
+            "SEK": 0.44136,
+            "SGD": 0.05757,
+            "THB": 1.5369,
+            "TRY": 1.3348,
+            "USD": 0.04285,
+            "ZAR": 0.81999
+        },
+        "2024-02-28": {
+            "AUD": 0.06563,
+            "BGN": 0.07715,
+            "BRL": 0.21102,
+            "CAD": 0.05794,
+            "CHF": 0.03755,
+            "CNY": 0.30691,
+            "DKK": 0.29402,
+            "EUR": 0.03944,
+            "GBP": 0.03374,
+            "HKD": 0.3337,
+            "HUF": 15.4603,
+            "IDR": 669.89,
+            "ILS": 0.1537,
+            "INR": 3.5342,
+            "ISK": 5.8891,
+            "JPY": 6.4243,
+            "KRW": 57.011,
+            "MXN": 0.72894,
+            "MYR": 0.2034,
+            "NOK": 0.45233,
+            "NZD": 0.06993,
+            "PHP": 2.3993,
+            "PLN": 0.16947,
+            "RON": 0.19597,
+            "SEK": 0.44146,
+            "SGD": 0.05741,
+            "THB": 1.5343,
+            "TRY": 1.3296,
+            "USD": 0.04263,
+            "ZAR": 0.8199
+        },
+        "2024-02-29": {
+            "AUD": 0.06578,
+            "BGN": 0.07711,
+            "BRL": 0.21312,
+            "CAD": 0.05803,
+            "CHF": 0.03759,
+            "CNY": 0.30709,
+            "DKK": 0.29389,
+            "EUR": 0.03943,
+            "GBP": 0.03377,
+            "HKD": 0.33409,
+            "HUF": 15.5139,
+            "IDR": 671.77,
+            "ILS": 0.15273,
+            "INR": 3.5386,
+            "ISK": 5.8865,
+            "JPY": 6.4082,
+            "KRW": 57.069,
+            "MXN": 0.72929,
+            "MYR": 0.20256,
+            "NOK": 0.4531,
+            "NZD": 0.07021,
+            "PHP": 2.3995,
+            "PLN": 0.17036,
+            "RON": 0.19598,
+            "SEK": 0.44218,
+            "SGD": 0.05745,
+            "THB": 1.5341,
+            "TRY": 1.3329,
+            "USD": 0.04268,
+            "ZAR": 0.82407
+        },
+        "2024-03-01": {
+            "AUD": 0.06567,
+            "BGN": 0.0772,
+            "BRL": 0.2118,
+            "CAD": 0.05794,
+            "CHF": 0.03782,
+            "CNY": 0.30726,
+            "DKK": 0.29425,
+            "EUR": 0.03947,
+            "GBP": 0.03379,
+            "HKD": 0.33415,
+            "HUF": 15.5232,
+            "IDR": 671.06,
+            "ILS": 0.15206,
+            "INR": 3.5373,
+            "ISK": 5.9014,
+            "JPY": 6.4272,
+            "KRW": 57.009,
+            "MXN": 0.72664,
+            "MYR": 0.20257,
+            "NOK": 0.4517,
+            "NZD": 0.07012,
+            "PHP": 2.395,
+            "PLN": 0.17045,
+            "RON": 0.19617,
+            "SEK": 0.44191,
+            "SGD": 0.05749,
+            "THB": 1.5349,
+            "TRY": 1.3379,
+            "USD": 0.04268,
+            "ZAR": 0.81854
+        },
+        "2024-03-04": {
+            "AUD": 0.06563,
+            "BGN": 0.07713,
+            "BRL": 0.21186,
+            "CAD": 0.05805,
+            "CHF": 0.03788,
+            "CNY": 0.30795,
+            "DKK": 0.29397,
+            "EUR": 0.03944,
+            "GBP": 0.03375,
+            "HKD": 0.33468,
+            "HUF": 15.588,
+            "IDR": 673.17,
+            "ILS": 0.15292,
+            "INR": 3.5471,
+            "ISK": 5.896,
+            "JPY": 6.4371,
+            "KRW": 56.986,
+            "MXN": 0.72771,
+            "MYR": 0.20205,
+            "NOK": 0.45088,
+            "NZD": 0.07016,
+            "PHP": 2.3949,
+            "PLN": 0.17045,
+            "RON": 0.19604,
+            "SEK": 0.44338,
+            "SGD": 0.05746,
+            "THB": 1.533,
+            "TRY": 1.3486,
+            "USD": 0.04277,
+            "ZAR": 0.81393
+        }
+    }
+}
+
+
+
+----------------------------------------------------------------------------------------------------------------------
+
+https://api.frankfurter.app/2019-09-17..2019-10-10?from=USD
+
+
+{
+    "amount": 1.0,
+    "base": "USD",
+    "start_date": "2019-09-30",
+    "end_date": "2019-10-10",
+    "rates": {
+        "2019-09-30": {
+            "AUD": 1.4809,
+            "BGN": 1.7961,
+            "BRL": 4.1591,
+            "CAD": 1.3248,
+            "CHF": 0.99614,
+            "CNY": 7.1434,
+            "CZK": 23.708,
+            "DKK": 6.8566,
+            "EUR": 0.91836,
+            "GBP": 0.81342,
+            "HKD": 7.8398,
+            "HRK": 6.806,
+            "HUF": 307.49,
+            "IDR": 14195,
+            "ILS": 3.4785,
+            "INR": 70.862,
+            "ISK": 124.07,
+            "JPY": 107.99,
+            "KRW": 1198.3,
+            "MXN": 19.7006,
+            "MYR": 4.187,
+            "NOK": 9.0874,
+            "NZD": 1.5956,
+            "PHP": 51.936,
+            "PLN": 4.0208,
+            "RON": 4.3618,
+            "RUB": 64.979,
+            "SEK": 9.8226,
+            "SGD": 1.383,
+            "THB": 30.595,
+            "TRY": 5.6471,
+            "ZAR": 15.2058
+        },
+        "2019-10-01": {
+            "AUD": 1.4933,
+            "BGN": 1.7946,
+            "BRL": 4.1644,
+            "CAD": 1.3274,
+            "CHF": 1.0007,
+            "CNY": 7.1484,
+            "CZK": 23.619,
+            "DKK": 6.8503,
+            "EUR": 0.9176,
+            "GBP": 0.81625,
+            "HKD": 7.8408,
+            "HRK": 6.8004,
+            "HUF": 307.2,
+            "IDR": 14228,
+            "ILS": 3.4783,
+            "INR": 71.107,
+            "ISK": 124.15,
+            "JPY": 108.28,
+            "KRW": 1202.57,
+            "MXN": 19.7825,
+            "MYR": 4.1945,
+            "NOK": 9.1267,
+            "NZD": 1.6084,
+            "PHP": 51.945,
+            "PLN": 4.0167,
+            "RON": 4.3596,
+            "RUB": 65.225,
+            "SEK": 9.914,
+            "SGD": 1.3863,
+            "THB": 30.675,
+            "TRY": 5.6872,
+            "ZAR": 15.2964
+        },
+        "2019-10-02": {
+            "AUD": 1.4967,
+            "BGN": 1.7902,
+            "BRL": 4.1662,
+            "CAD": 1.3242,
+            "CHF": 1.0014,
+            "CNY": 7.1484,
+            "CZK": 23.56,
+            "DKK": 6.8343,
+            "EUR": 0.91533,
+            "GBP": 0.81437,
+            "HKD": 7.8413,
+            "HRK": 6.7872,
+            "HUF": 305.77,
+            "IDR": 14203,
+            "ILS": 3.4893,
+            "INR": 71.238,
+            "ISK": 124.03,
+            "JPY": 107.52,
+            "KRW": 1206.59,
+            "MXN": 19.8041,
+            "MYR": 4.1945,
+            "NOK": 9.1469,
+            "NZD": 1.6029,
+            "PHP": 51.996,
+            "PLN": 3.9998,
+            "RON": 4.347,
+            "RUB": 65.184,
+            "SEK": 9.8964,
+            "SGD": 1.3855,
+            "THB": 30.625,
+            "TRY": 5.7295,
+            "ZAR": 15.2519
+        },
+        "2019-10-03": {
+            "AUD": 1.4879,
+            "BGN": 1.786,
+            "BRL": 4.1178,
+            "CAD": 1.3338,
+            "CHF": 1.0005,
+            "CNY": 7.1484,
+            "CZK": 23.504,
+            "DKK": 6.8173,
+            "EUR": 0.91316,
+            "GBP": 0.81079,
+            "HKD": 7.8424,
+            "HRK": 6.7738,
+            "HUF": 304.1,
+            "IDR": 14172,
+            "ILS": 3.4958,
+            "INR": 70.967,
+            "ISK": 123.92,
+            "JPY": 106.99,
+            "KRW": 1203.4,
+            "MXN": 19.7498,
+            "MYR": 4.1875,
+            "NOK": 9.1467,
+            "NZD": 1.5908,
+            "PHP": 51.811,
+            "PLN": 3.9631,
+            "RON": 4.3348,
+            "RUB": 65.085,
+            "SEK": 9.8922,
+            "SGD": 1.3814,
+            "THB": 30.555,
+            "TRY": 5.7025,
+            "ZAR": 15.1655
+        },
+        "2019-10-04": {
+            "AUD": 1.4798,
+            "BGN": 1.7814,
+            "BRL": 4.0738,
+            "CAD": 1.3309,
+            "CHF": 0.99399,
+            "CNY": 7.1497,
+            "CZK": 23.446,
+            "DKK": 6.8008,
+            "EUR": 0.91083,
+            "GBP": 0.81105,
+            "HKD": 7.8422,
+            "HRK": 6.7597,
+            "HUF": 303.09,
+            "IDR": 14146,
+            "ILS": 3.4843,
+            "INR": 70.901,
+            "ISK": 123.6,
+            "JPY": 106.78,
+            "KRW": 1195.3,
+            "MXN": 19.591,
+            "MYR": 4.1855,
+            "NOK": 9.1006,
+            "NZD": 1.5803,
+            "PHP": 51.745,
+            "PLN": 3.9389,
+            "RON": 4.3246,
+            "RUB": 64.798,
+            "SEK": 9.8465,
+            "SGD": 1.3789,
+            "THB": 30.455,
+            "TRY": 5.6931,
+            "ZAR": 15.1604
+        },
+        "2019-10-07": {
+            "AUD": 1.4842,
+            "BGN": 1.7791,
+            "BRL": 4.067,
+            "CAD": 1.3311,
+            "CHF": 0.99372,
+            "CNY": 7.1484,
+            "CZK": 23.452,
+            "DKK": 6.7933,
+            "EUR": 0.90967,
+            "GBP": 0.81102,
+            "HKD": 7.8447,
+            "HRK": 6.7529,
+            "HUF": 303.5,
+            "IDR": 14173,
+            "ILS": 3.4936,
+            "INR": 70.994,
+            "ISK": 124.17,
+            "JPY": 106.83,
+            "KRW": 1196.4,
+            "MXN": 19.5579,
+            "MYR": 4.193,
+            "NOK": 9.132,
+            "NZD": 1.5876,
+            "PHP": 51.873,
+            "PLN": 3.9404,
+            "RON": 4.3187,
+            "RUB": 64.874,
+            "SEK": 9.9072,
+            "SGD": 1.3804,
+            "THB": 30.452,
+            "TRY": 5.74,
+            "ZAR": 15.1307
+        },
+        "2019-10-08": {
+            "AUD": 1.4824,
+            "BGN": 1.7803,
+            "BRL": 4.1028,
+            "CAD": 1.3311,
+            "CHF": 0.99199,
+            "CNY": 7.1431,
+            "CZK": 23.489,
+            "DKK": 6.7986,
+            "EUR": 0.91025,
+            "GBP": 0.81736,
+            "HKD": 7.8443,
+            "HRK": 6.758,
+            "HUF": 304.54,
+            "IDR": 14155,
+            "ILS": 3.5105,
+            "INR": 71.131,
+            "ISK": 124.25,
+            "JPY": 106.89,
+            "KRW": 1198.26,
+            "MXN": 19.5995,
+            "MYR": 4.1935,
+            "NOK": 9.1435,
+            "NZD": 1.5814,
+            "PHP": 51.843,
+            "PLN": 3.9437,
+            "RON": 4.3224,
+            "RUB": 65.194,
+            "SEK": 9.8947,
+            "SGD": 1.3807,
+            "THB": 30.405,
+            "TRY": 5.8365,
+            "ZAR": 15.2678
+        },
+        "2019-10-09": {
+            "AUD": 1.4827,
+            "BGN": 1.7811,
+            "BRL": 4.0782,
+            "CAD": 1.3302,
+            "CHF": 0.99508,
+            "CNY": 7.1273,
+            "CZK": 23.516,
+            "DKK": 6.8018,
+            "EUR": 0.91066,
+            "GBP": 0.81823,
+            "HKD": 7.8447,
+            "HRK": 6.7635,
+            "HUF": 304.2,
+            "IDR": 14170,
+            "ILS": 3.5029,
+            "INR": 71.063,
+            "ISK": 125.03,
+            "JPY": 107.38,
+            "KRW": 1197.31,
+            "MXN": 19.5356,
+            "MYR": 4.197,
+            "NOK": 9.1547,
+            "NZD": 1.5828,
+            "PHP": 51.74,
+            "PLN": 3.9373,
+            "RON": 4.3244,
+            "RUB": 64.832,
+            "SEK": 9.942,
+            "SGD": 1.3799,
+            "THB": 30.335,
+            "TRY": 5.8331,
+            "ZAR": 15.1396
+        },
+        "2019-10-10": {
+            "AUD": 1.4784,
+            "BGN": 1.7732,
+            "BRL": 4.0966,
+            "CAD": 1.3307,
+            "CHF": 0.99257,
+            "CNY": 7.123,
+            "CZK": 23.475,
+            "DKK": 6.771,
+            "EUR": 0.90662,
+            "GBP": 0.81736,
+            "HKD": 7.8442,
+            "HRK": 6.7344,
+            "HUF": 302.37,
+            "IDR": 14151,
+            "ILS": 3.5081,
+            "INR": 71.039,
+            "ISK": 125.57,
+            "JPY": 107.45,
+            "KRW": 1192.99,
+            "MXN": 19.5122,
+            "MYR": 4.189,
+            "NOK": 9.1147,
+            "NZD": 1.5795,
+            "PHP": 51.65,
+            "PLN": 3.915,
+            "RON": 4.3085,
+            "RUB": 64.633,
+            "SEK": 9.8291,
+            "SGD": 1.3769,
+            "THB": 30.405,
+            "TRY": 5.8872,
+            "ZAR": 15.1313
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------------------------------------------------
+
+https://api.worldbank.org/v2/country/BEL/indicator/NY.GDP.MKTP.CD?format=json&date=1981:2010&per_page=100
+
+[
+    {
+        "page": 1,
+        "pages": 1,
+        "per_page": 100,
+        "total": 30,
+        "sourceid": "2",
+        "lastupdated": "2024-02-21"
+    },
+    [
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "BE",
+                "value": "Belgium"
+            },
+            "countryiso3code": "BEL",
+            "date": "2010",
+            "value": 481420882905.001,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "BE",
+                "value": "Belgium"
+            },
+            "countryiso3code": "BEL",
+            "date": "2009",
+            "value": 483254171097.812,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "BE",
+                "value": "Belgium"
+            },
+            "countryiso3code": "BEL",
+            "date": "2008",
+            "value": 517328087920.078,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "BE",
+                "value": "Belgium"
+            },
+            "countryiso3code": "BEL",
+            "date": "2007",
+            "value": 470922156309.453,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "BE",
+                "value": "Belgium"
+            },
+            "countryiso3code": "BEL",
+            "date": "2006",
+            "value": 408259840868.823,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "BE",
+                "value": "Belgium"
+            },
+            "countryiso3code": "BEL",
+            "date": "2005",
+            "value": 385714762230.039,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "BE",
+                "value": "Belgium"
+            },
+            "countryiso3code": "BEL",
+            "date": "2004",
+            "value": 369214712443.206,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "BE",
+                "value": "Belgium"
+            },
+            "countryiso3code": "BEL",
+            "date": "2003",
+            "value": 318082528506.588,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "BE",
+                "value": "Belgium"
+            },
+            "countryiso3code": "BEL",
+            "date": "2002",
+            "value": 258383599375.177,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "BE",
+                "value": "Belgium"
+            },
+            "countryiso3code": "BEL",
+            "date": "2001",
+            "value": 236746141604.37,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "BE",
+                "value": "Belgium"
+            },
+            "countryiso3code": "BEL",
+            "date": "2000",
+            "value": 236792460312.471,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "BE",
+                "value": "Belgium"
+            },
+            "countryiso3code": "BEL",
+            "date": "1999",
+            "value": 258245733221.468,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "BE",
+                "value": "Belgium"
+            },
+            "countryiso3code": "BEL",
+            "date": "1998",
+            "value": 258528339631.029,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "BE",
+                "value": "Belgium"
+            },
+            "countryiso3code": "BEL",
+            "date": "1997",
+            "value": 252708051420.839,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "BE",
+                "value": "Belgium"
+            },
+            "countryiso3code": "BEL",
+            "date": "1996",
+            "value": 279201433224.756,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "BE",
+                "value": "Belgium"
+            },
+            "countryiso3code": "BEL",
+            "date": "1995",
+            "value": 288025588396.278,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "BE",
+                "value": "Belgium"
+            },
+            "countryiso3code": "BEL",
+            "date": "1994",
+            "value": 244884129491.198,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "BE",
+                "value": "Belgium"
+            },
+            "countryiso3code": "BEL",
+            "date": "1993",
+            "value": 224721795708.955,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "BE",
+                "value": "Belgium"
+            },
+            "countryiso3code": "BEL",
+            "date": "1992",
+            "value": 234781652446.675,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "BE",
+                "value": "Belgium"
+            },
+            "countryiso3code": "BEL",
+            "date": "1991",
+            "value": 210510999409.333,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "BE",
+                "value": "Belgium"
+            },
+            "countryiso3code": "BEL",
+            "date": "1990",
+            "value": 205331747947.851,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "BE",
+                "value": "Belgium"
+            },
+            "countryiso3code": "BEL",
+            "date": "1989",
+            "value": 164221056511.057,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "BE",
+                "value": "Belgium"
+            },
+            "countryiso3code": "BEL",
+            "date": "1988",
+            "value": 162299103675.261,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "BE",
+                "value": "Belgium"
+            },
+            "countryiso3code": "BEL",
+            "date": "1987",
+            "value": 149394404105.889,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "BE",
+                "value": "Belgium"
+            },
+            "countryiso3code": "BEL",
+            "date": "1986",
+            "value": 120018787249.413,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "BE",
+                "value": "Belgium"
+            },
+            "countryiso3code": "BEL",
+            "date": "1985",
+            "value": 86268264148.3796,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "BE",
+                "value": "Belgium"
+            },
+            "countryiso3code": "BEL",
+            "date": "1984",
+            "value": 83349530159.1734,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "BE",
+                "value": "Belgium"
+            },
+            "countryiso3code": "BEL",
+            "date": "1983",
+            "value": 87184239053.2544,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "BE",
+                "value": "Belgium"
+            },
+            "countryiso3code": "BEL",
+            "date": "1982",
+            "value": 92095926187.5331,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "BE",
+                "value": "Belgium"
+            },
+            "countryiso3code": "BEL",
+            "date": "1981",
+            "value": 104730018470.23,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        }
+    ]
+]
+
+
+----------------------------------------------------------------------------------------------------------------------
+
+https://api.worldbank.org/v2/country/IND/indicator/NY.GDP.MKTP.CD?format=json&date=1995:2020&per_page=100
+
+
+[
+    {
+        "page": 1,
+        "pages": 1,
+        "per_page": 100,
+        "total": 26,
+        "sourceid": "2",
+        "lastupdated": "2024-02-21"
+    },
+    [
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "IN",
+                "value": "India"
+            },
+            "countryiso3code": "IND",
+            "date": "2020",
+            "value": 2671595405986.86,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "IN",
+                "value": "India"
+            },
+            "countryiso3code": "IND",
+            "date": "2019",
+            "value": 2835606256616.03,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "IN",
+                "value": "India"
+            },
+            "countryiso3code": "IND",
+            "date": "2018",
+            "value": 2702929641707.38,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "IN",
+                "value": "India"
+            },
+            "countryiso3code": "IND",
+            "date": "2017",
+            "value": 2651474262735.28,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "IN",
+                "value": "India"
+            },
+            "countryiso3code": "IND",
+            "date": "2016",
+            "value": 2294796885682.55,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "IN",
+                "value": "India"
+            },
+            "countryiso3code": "IND",
+            "date": "2015",
+            "value": 2103588360066.32,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "IN",
+                "value": "India"
+            },
+            "countryiso3code": "IND",
+            "date": "2014",
+            "value": 2039126479228.11,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "IN",
+                "value": "India"
+            },
+            "countryiso3code": "IND",
+            "date": "2013",
+            "value": 1856721507681.08,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "IN",
+                "value": "India"
+            },
+            "countryiso3code": "IND",
+            "date": "2012",
+            "value": 1827637590787.19,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "IN",
+                "value": "India"
+            },
+            "countryiso3code": "IND",
+            "date": "2011",
+            "value": 1823051829900.81,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "IN",
+                "value": "India"
+            },
+            "countryiso3code": "IND",
+            "date": "2010",
+            "value": 1675615519489.35,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "IN",
+                "value": "India"
+            },
+            "countryiso3code": "IND",
+            "date": "2009",
+            "value": 1341888016984.36,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "IN",
+                "value": "India"
+            },
+            "countryiso3code": "IND",
+            "date": "2008",
+            "value": 1198895139014.62,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "IN",
+                "value": "India"
+            },
+            "countryiso3code": "IND",
+            "date": "2007",
+            "value": 1216736438842.41,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "IN",
+                "value": "India"
+            },
+            "countryiso3code": "IND",
+            "date": "2006",
+            "value": 940259888794.351,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "IN",
+                "value": "India"
+            },
+            "countryiso3code": "IND",
+            "date": "2005",
+            "value": 820381595510.643,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "IN",
+                "value": "India"
+            },
+            "countryiso3code": "IND",
+            "date": "2004",
+            "value": 709148514815.787,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "IN",
+                "value": "India"
+            },
+            "countryiso3code": "IND",
+            "date": "2003",
+            "value": 607699285436.048,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "IN",
+                "value": "India"
+            },
+            "countryiso3code": "IND",
+            "date": "2002",
+            "value": 514937948874.212,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "IN",
+                "value": "India"
+            },
+            "countryiso3code": "IND",
+            "date": "2001",
+            "value": 485441014538.638,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "IN",
+                "value": "India"
+            },
+            "countryiso3code": "IND",
+            "date": "2000",
+            "value": 468394937255.803,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "IN",
+                "value": "India"
+            },
+            "countryiso3code": "IND",
+            "date": "1999",
+            "value": 458820417337.807,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "IN",
+                "value": "India"
+            },
+            "countryiso3code": "IND",
+            "date": "1998",
+            "value": 421351317224.941,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "IN",
+                "value": "India"
+            },
+            "countryiso3code": "IND",
+            "date": "1997",
+            "value": 415867563592.829,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "IN",
+                "value": "India"
+            },
+            "countryiso3code": "IND",
+            "date": "1996",
+            "value": 392896866204.516,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        },
+        {
+            "indicator": {
+                "id": "NY.GDP.MKTP.CD",
+                "value": "GDP (current US$)"
+            },
+            "country": {
+                "id": "IN",
+                "value": "India"
+            },
+            "countryiso3code": "IND",
+            "date": "1995",
+            "value": 360281909643.489,
+            "unit": "",
+            "obs_status": "",
+            "decimal": 0
+        }
+    ]
+]
+
+----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+

@@ -1,0 +1,57 @@
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.grpc.gen";
+option java_outer_classname = "SurveyProto";
+
+package survey;
+
+
+message Answer {
+  int32 answer_id = 1;
+  string answer = 2;
+}
+
+message Survey {
+  int32 surveyID = 1;
+  string question = 2;
+  repeated Answer answers = 3;
+  string username = 4;
+  repeated Vote votes = 5;
+}
+
+message Vote {
+  int32 surveyID = 1;
+  int32 answerID = 2;
+  string username = 3;
+}
+
+message ListData{
+  int32 max_len = 1;
+}
+
+message SurveyData{
+  int32 surveyID = 1;
+}
+
+message AnswerStats{
+  Answer answer = 1;
+  int64 numberOfVotes = 2;
+  double percentVotes = 3;
+}
+
+message SurveyStats{
+  string question = 1;
+  repeated AnswerStats answerStats= 2;
+  int64 votesNumber = 3;
+}
+
+
+service SurveyService {
+  rpc CreateSurvey(Survey) returns (Survey) {}
+  rpc ListSurveys(ListData) returns (stream Survey) {}
+  rpc SurveyVote(Vote) returns (Vote) {}
+  rpc GetSurveyVotes(SurveyData) returns (stream Vote) {}
+  rpc GetSurveyStats(SurveyData) returns (SurveyStats) {}
+}
